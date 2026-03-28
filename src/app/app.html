@@ -1,0 +1,281 @@
+<div class="page-shell" id="top">
+  <div class="ambient ambient-left" aria-hidden="true"></div>
+  <div class="ambient ambient-right" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Go to top">
+      <span class="brand-mark">&lt;A/&gt;</span>
+      <span class="brand-name">{{ portfolioName }}</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      @for (item of navItems; track item.label) {
+        <a [href]="item.href">{{ item.label }}</a>
+      }
+    </nav>
+
+    <a class="github-link" [href]="githubUrl" target="_blank" rel="noreferrer">
+      GitHub
+    </a>
+  </header>
+
+  <main>
+    <section class="hero section">
+      <div class="hero-developer">developer</div>
+
+      <div class="hero-grid">
+        <article class="profile-card panel">
+          <div class="avatar">
+            <img src="alija-profile.jpeg" alt="Portrait of Alija Hodzic" />
+          </div>
+          <p class="eyebrow">Open for {{ portfolioTrack }}</p>
+          <h1>{{ portfolioName }}</h1>
+          <p class="role">{{ portfolioTitle }} focused on clean, modern web experiences.</p>
+
+          <ul class="profile-meta">
+            <li>
+              <span class="meta-label">Email</span>
+              <span>{{ email }}</span>
+            </li>
+            <li>
+              <span class="meta-label">Location</span>
+              <span>{{ location }}</span>
+            </li>
+            <li>
+              <span class="meta-label">Focus</span>
+              <span>{{ portfolioTrack }} roles, Angular and .NET</span>
+            </li>
+          </ul>
+
+          <div class="badge-list">
+            @for (badge of heroBadges; track badge) {
+              <span>{{ badge }}</span>
+            }
+          </div>
+
+          <div class="profile-actions">
+            <a class="button button-primary" href="#projects">View projects</a>
+            <a class="button button-secondary" href="#contact">Let&apos;s talk</a>
+          </div>
+
+          <div class="social-row">
+            @for (link of socialLinks; track link.label) {
+              <a [href]="link.url" target="_blank" rel="noreferrer">{{ link.label }}</a>
+            }
+          </div>
+        </article>
+
+        <section class="hero-copy">
+          <p class="intro-line">Hey, I&apos;m Alija</p>
+          <h2>
+            I turn ideas into
+            <span>fast, sharp, production-ready websites.</span>
+          </h2>
+          <p class="hero-text">
+            I&apos;m a {{ portfolioTitle.toLowerCase() }} looking for {{ portfolioTrack.toLowerCase() }}
+            opportunities, with a growing focus on Angular, .NET, C#, TypeScript, and modern
+            frontend development.
+          </p>
+
+          <div class="hero-cta">
+            <a class="button button-primary" href="#contact">Start a project</a>
+            <a class="button button-ghost" [href]="linkedinUrl" target="_blank" rel="noreferrer">
+              LinkedIn profile
+            </a>
+          </div>
+        </section>
+
+        <aside class="stats-card panel">
+          <p class="eyebrow">Quick snapshot</p>
+
+          <div class="stats-list">
+            @for (stat of stats; track stat.label) {
+              <div class="stat-item">
+                <strong>{{ stat.value }}</strong>
+                <span>{{ stat.label }}</span>
+              </div>
+            }
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">About</p>
+        <h2>A stronger foundation for your personal brand</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-visual panel">
+          <div class="visual-card">
+            <span class="visual-accent">Portfolio 2.0</span>
+            <h3>Angular migration completed</h3>
+            <p>
+              The original design language is preserved, but the experience is now cleaner,
+              more intentional, and ready for your real content.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <p>
+            This portfolio is being shaped around my real developer path. I work with Angular,
+            .NET, C#, SQL and modern frontend tooling, and I&apos;m building projects that show both
+            UI skills and practical full-stack thinking.
+          </p>
+          <p>
+            The goal is to create a strong first impression for recruiters, companies, and clients
+            through a modern Angular portfolio that I can keep improving with new projects, my
+            resume, and stronger case studies over time.
+          </p>
+          <div class="timeline">
+            @for (item of experiences; track item.title) {
+              <article class="timeline-item">
+                <span class="timeline-period">{{ item.period }}</span>
+                <div>
+                  <h3>{{ item.title }}</h3>
+                  <p>{{ item.description }}</p>
+                </div>
+              </article>
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-heading">
+        <p class="eyebrow">Skills</p>
+        <h2>Tools I use to build reliable and attractive web products</h2>
+      </div>
+
+      <div class="skills-layout">
+        <div class="skill-groups">
+          @for (group of skillGroups; track group.category) {
+            <article class="panel skill-group">
+              <h3>{{ group.category }}</h3>
+              <div class="badge-list">
+                @for (tech of group.techs; track tech) {
+                  <span>{{ tech }}</span>
+                }
+              </div>
+            </article>
+          }
+        </div>
+
+        <div class="panel skills-bars">
+          @for (skill of skillBars; track skill.name) {
+            <div class="bar-row">
+              <div class="bar-label">
+                <span>{{ skill.name }}</span>
+                <strong>{{ skill.level }}%</strong>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill" [style.width.%]="skill.level"></div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-heading">
+        <p class="eyebrow">Projects</p>
+        <h2>Selected work and portfolio-ready concepts</h2>
+      </div>
+
+      <div class="project-grid">
+        @for (project of projects; track project.title) {
+          <article class="panel project-card">
+            <div class="project-cover">
+              <span>{{ project.accent }}</span>
+            </div>
+            <div class="project-body">
+              <div class="project-topline">
+                <h3>{{ project.title }}</h3>
+                <a [href]="project.link" target="_blank" rel="noreferrer">Open</a>
+              </div>
+              <p>{{ project.description }}</p>
+              <div class="badge-list">
+                @for (tech of project.tech; track tech) {
+                  <span>{{ tech }}</span>
+                }
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-heading center">
+        <p class="eyebrow">Contact</p>
+        <h2>Let&apos;s turn this into your real portfolio next</h2>
+        <p>
+          The design is ready, and the next step is adding your resume, more project details, and
+          any deployment or real contact workflow you want.
+        </p>
+      </div>
+
+      <form class="contact-form panel" (ngSubmit)="onSubmit()" #contactNgForm="ngForm">
+        <div class="field-grid">
+          <label>
+            <span>Your name</span>
+            <input
+              type="text"
+              name="name"
+              [(ngModel)]="contactForm.name"
+              placeholder="Enter your name"
+              required
+            />
+          </label>
+
+          <label>
+            <span>Your email</span>
+            <input
+              type="email"
+              name="email"
+              [(ngModel)]="contactForm.email"
+              placeholder="Enter your email"
+              required
+            />
+          </label>
+        </div>
+
+        <label>
+          <span>Your message</span>
+          <textarea
+            name="message"
+            [(ngModel)]="contactForm.message"
+            rows="6"
+            placeholder="Tell me about your project or idea"
+            required
+          ></textarea>
+        </label>
+
+        <div class="form-footer">
+          <button class="button button-primary" type="submit" [disabled]="contactNgForm.invalid">
+            Send message
+          </button>
+          @if (submitState === 'sent') {
+            <p class="success-message">Message captured locally. Next step is wiring this to your real contact channel.</p>
+          }
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 {{ portfolioName }}. Built in Angular for junior and internship opportunities.</p>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a [href]="githubUrl" target="_blank" rel="noreferrer">
+        GitHub
+      </a>
+      <a [href]="linkedinUrl" target="_blank" rel="noreferrer">LinkedIn</a>
+    </div>
+  </footer>
+</div>
