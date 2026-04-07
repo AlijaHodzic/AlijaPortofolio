@@ -52,7 +52,7 @@ export class App {
   readonly portfolioName = 'Alija Hodzic';
   readonly portfolioTitle = 'Full-Stack Developer';
   readonly portfolioTrack = 'Junior / Internship';
-  readonly email = 'alija.hexor@gmail.com';
+  readonly email = 'alija.hodzicdev@gmail.com';
   readonly location = 'Bosnia and Herzegovina';
   readonly githubUrl = 'https://github.com/AlijaHodzic';
   readonly linkedinUrl = 'https://www.linkedin.com/in/alijahodzic/';
