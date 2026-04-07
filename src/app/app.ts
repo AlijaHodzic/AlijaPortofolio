@@ -48,7 +48,7 @@ interface SocialLink {
   styleUrl: './app.scss',
 })
 export class App {
-  readonly contactEndpoint = 'https://formspree.io/f/xojprnvo';
+  readonly contactEndpoint = 'https://formspree.io/f/mdapbyra';
   readonly portfolioName = 'Alija Hodzic';
   readonly portfolioTitle = 'Full-Stack Developer';
   readonly portfolioTrack = 'Junior / Internship';
