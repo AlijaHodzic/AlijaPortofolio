@@ -214,8 +214,8 @@
         <p class="eyebrow">Contact</p>
         <h2>Let&apos;s turn this into your real portfolio next</h2>
         <p>
-          The design is ready, and the next step is adding your resume, more project details, and
-          any deployment or real contact workflow you want.
+          If someone sends a message here, it now goes directly to your email through the contact
+          form workflow you connected.
         </p>
       </div>
 
@@ -256,11 +256,22 @@
         </label>
 
         <div class="form-footer">
-          <button class="button button-primary" type="submit" [disabled]="contactNgForm.invalid">
-            Send message
+          <button
+            class="button button-primary"
+            type="submit"
+            [disabled]="contactNgForm.invalid || submitState === 'sending'"
+          >
+            @if (submitState === 'sending') {
+              Sending...
+            } @else {
+              Send message
+            }
           </button>
           @if (submitState === 'sent') {
-            <p class="success-message">Message captured locally. Next step is wiring this to your real contact channel.</p>
+            <p class="success-message">Message sent successfully. It should arrive at your email soon.</p>
+          }
+          @if (submitState === 'error') {
+            <p class="error-message">Something went wrong while sending. Please try again.</p>
           }
         </div>
       </form>

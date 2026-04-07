@@ -207,7 +207,8 @@
 .project-body p,
 .section-heading p,
 .stats-card span,
-.success-message {
+.success-message,
+.error-message {
   color: var(--color-muted);
 }
 
@@ -572,6 +573,12 @@
 .success-message {
   margin: 0;
   font-size: 0.95rem;
+}
+
+.error-message {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #ff8d8d;
 }
 
 .site-footer {

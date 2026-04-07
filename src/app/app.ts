@@ -48,6 +48,7 @@ interface SocialLink {
   styleUrl: './app.scss',
 })
 export class App {
+  readonly contactEndpoint = 'https://formspree.io/f/xojprnvo';
   readonly portfolioName = 'Alija Hodzic';
   readonly portfolioTitle = 'Full-Stack Developer';
   readonly portfolioTrack = 'Junior / Internship';
@@ -157,9 +158,42 @@ export class App {
     message: '',
   };
 
-  submitState: 'idle' | 'sent' = 'idle';
+  submitState: 'idle' | 'sending' | 'sent' | 'error' = 'idle';
 
-  onSubmit(): void {
-    this.submitState = 'sent';
+  async onSubmit(): Promise<void> {
+    if (this.submitState === 'sending') {
+      return;
+    }
+
+    this.submitState = 'sending';
+
+    try {
+      const response = await fetch(this.contactEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: this.contactForm.name,
+          email: this.contactForm.email,
+          message: this.contactForm.message,
+          _subject: `New portfolio message from ${this.contactForm.name}`,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Submission failed');
+      }
+
+      this.contactForm = {
+        name: '',
+        email: '',
+        message: '',
+      };
+      this.submitState = 'sent';
+    } catch {
+      this.submitState = 'error';
+    }
   }
 }
