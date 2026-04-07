@@ -267,9 +267,9 @@
               Send message
             }
           </button>
-          @if (submitState === 'sent') {
-            <p class="success-message">Message sent successfully. It should arrive at your email soon.</p>
-          }
+            @if (submitState === 'sent') {
+            <p class="success-message">Message sent successfully.</p>
+            }
           @if (submitState === 'error') {
             <p class="error-message">Something went wrong while sending. Please try again.</p>
           }
