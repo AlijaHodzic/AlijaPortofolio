@@ -56,6 +56,7 @@ export class App {
   readonly location = 'Bosnia and Herzegovina';
   readonly githubUrl = 'https://github.com/AlijaHodzic';
   readonly linkedinUrl = 'https://www.linkedin.com/in/alijahodzic/';
+  readonly cvUrl = 'alija-hodzic-cv.pdf';
 
   readonly navItems: NavItem[] = [
     { label: 'Home', href: '#top' },
