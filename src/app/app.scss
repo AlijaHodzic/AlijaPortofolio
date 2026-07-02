@@ -531,6 +531,13 @@
   gap: 1rem;
 }
 
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
 .project-topline a {
   color: var(--color-primary);
   font-family: var(--font-mono);

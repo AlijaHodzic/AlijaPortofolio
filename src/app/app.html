@@ -43,7 +43,7 @@
             </li>
             <li>
               <span class="meta-label">Focus</span>
-              <span>{{ portfolioTrack }} roles, Angular and .NET</span>
+              <span>Angular, .NET, REST APIs and full-stack delivery</span>
             </li>
           </ul>
 
@@ -76,8 +76,8 @@
           </h2>
           <p class="hero-text">
             I&apos;m a {{ portfolioTitle.toLowerCase() }} looking for {{ portfolioTrack.toLowerCase() }}
-            opportunities, with a growing focus on Angular, .NET, C#, TypeScript, and modern
-            frontend development.
+            opportunities, with hands-on experience from a 6-month internship at HAA and a strong
+            focus on Angular, .NET, C#, TypeScript, and modern frontend development.
           </p>
 
           <div class="hero-cta">
@@ -106,31 +106,31 @@
     <section class="section" id="about">
       <div class="section-heading">
         <p class="eyebrow">About</p>
-        <h2>A stronger foundation for your personal brand</h2>
+        <h2>From internship experience to real full-stack delivery</h2>
       </div>
 
       <div class="about-grid">
         <div class="about-visual panel">
           <div class="visual-card">
-            <span class="visual-accent">Portfolio 2.0</span>
-            <h3>Angular migration completed</h3>
+            <span class="visual-accent">HAA Internship</span>
+            <h3>6 months of full-stack experience</h3>
             <p>
-              The original design language is preserved, but the experience is now cleaner,
-              more intentional, and ready for your real content.
+              My internship gave me hands-on exposure to Angular, C#/.NET, MySQL, testing, and
+              deployment workflows in a real development environment.
             </p>
           </div>
         </div>
 
         <div class="about-copy">
           <p>
-            This portfolio is being shaped around my real developer path. I work with Angular,
-            .NET, C#, SQL and modern frontend tooling, and I&apos;m building projects that show both
-            UI skills and practical full-stack thinking.
+            I now have both personal project experience and internship experience to back up my
+            portfolio. During my internship at HAA, I worked on full-stack web application tasks
+            involving Angular, C#/.NET, MySQL, REST APIs, testing, and deployment.
           </p>
           <p>
-            The goal is to create a strong first impression for recruiters, companies, and clients
-            through a modern Angular portfolio that I can keep improving with new projects, my
-            resume, and stronger case studies over time.
+            This site is focused on showing practical work, not just visual presentation. It gives
+            recruiters and companies a clearer view of the tools I use, the projects I build, and
+            the kind of junior full-stack role I am ready to grow into.
           </p>
           <div class="timeline">
             @for (item of experiences; track item.title) {
@@ -198,7 +198,16 @@
             <div class="project-body">
               <div class="project-topline">
                 <h3>{{ project.title }}</h3>
-                <a [href]="project.link" target="_blank" rel="noreferrer">Open</a>
+                <div class="project-links">
+                  <a [href]="project.primaryLink" target="_blank" rel="noreferrer">
+                    {{ project.primaryLabel }}
+                  </a>
+                  @if (project.secondaryLink && project.secondaryLabel) {
+                    <a [href]="project.secondaryLink" target="_blank" rel="noreferrer">
+                      {{ project.secondaryLabel }}
+                    </a>
+                  }
+                </div>
               </div>
               <p>{{ project.description }}</p>
               <div class="badge-list">
@@ -215,10 +224,10 @@
     <section class="section contact-section" id="contact">
       <div class="section-heading center">
         <p class="eyebrow">Contact</p>
-        <h2>Let&apos;s turn this into your real portfolio next</h2>
+        <h2>Let&apos;s build something useful together</h2>
         <p>
-          If someone sends a message here, it now goes directly to your email through the contact
-          form workflow you connected.
+          If you&apos;re hiring for a junior full-stack role, internship-to-junior path, or want to
+          discuss a project, feel free to send me a message.
         </p>
       </div>
 
@@ -270,9 +279,9 @@
               Send message
             }
           </button>
-            @if (submitState === 'sent') {
+          @if (submitState === 'sent') {
             <p class="success-message">Message sent successfully.</p>
-            }
+          }
           @if (submitState === 'error') {
             <p class="error-message">Something went wrong while sending. Please try again.</p>
           }
@@ -282,7 +291,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>&copy; 2026 {{ portfolioName }}. Built in Angular for junior and internship opportunities.</p>
+    <p>&copy; 2026 {{ portfolioName }}. Built in Angular for junior full-stack opportunities.</p>
     <div class="footer-links">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>

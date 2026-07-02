@@ -27,7 +27,10 @@ interface ProjectCard {
   description: string;
   tech: string[];
   accent: string;
-  link: string;
+  primaryLink: string;
+  primaryLabel: string;
+  secondaryLink?: string;
+  secondaryLabel?: string;
 }
 
 interface ExperienceItem {
@@ -51,7 +54,7 @@ export class App {
   readonly contactEndpoint = 'https://formspree.io/f/mdapbyra';
   readonly portfolioName = 'Alija Hodzic';
   readonly portfolioTitle = 'Full-Stack Developer';
-  readonly portfolioTrack = 'Junior / Internship';
+  readonly portfolioTrack = 'Junior Full-Stack Roles';
   readonly email = 'alija.hodzicdev@gmail.com';
   readonly location = 'Bosnia and Herzegovina';
   readonly githubUrl = 'https://github.com/AlijaHodzic';
@@ -75,9 +78,9 @@ export class App {
   ];
 
   readonly stats: StatItem[] = [
-    { value: 'Junior', label: 'Career stage' },
-    { value: 'Full-Stack', label: 'Angular and .NET focus' },
-    { value: 'Open', label: 'Internship and junior roles' },
+    { value: '6 mo.', label: 'Full-stack internship at HAA' },
+    { value: '3+', label: 'Production-style projects built' },
+    { value: 'Open', label: 'Junior full-stack opportunities' },
   ];
 
   readonly skillGroups: SkillGroup[] = [
@@ -87,11 +90,11 @@ export class App {
     },
     {
       category: 'Backend',
-      techs: ['.NET', 'C#', 'SQLite', 'REST APIs', 'SQL', 'GitHub'],
+      techs: ['.NET', 'C#', 'MySQL', 'SQLite', 'REST APIs', 'SQL'],
     },
     {
       category: 'Workflow',
-      techs: ['Git', 'GitHub', 'Responsive UI', 'Problem Solving', 'Learning Fast', 'Clean Code'],
+      techs: ['Git', 'GitHub', 'xUnit', 'Vercel', 'Render', 'Clean Code'],
     },
   ];
 
@@ -101,7 +104,7 @@ export class App {
     { name: 'C# / .NET', level: 82 },
     { name: 'HTML / CSS', level: 90 },
     { name: 'API Integration', level: 80 },
-    { name: 'SQLite / SQL', level: 78 },
+    { name: 'SQL / MySQL', level: 78 },
     { name: 'Git / GitHub', level: 84 },
   ];
 
@@ -112,7 +115,8 @@ export class App {
         'A freelance marketplace concept focused on connecting clients and freelancers through a modern full-stack workflow.',
       tech: ['Angular', '.NET', 'C#', 'SQLite'],
       accent: 'FH',
-      link: this.githubUrl,
+      primaryLink: 'https://github.com/AlijaHodzic',
+      primaryLabel: 'GitHub',
     },
     {
       title: 'Portfolio',
@@ -120,36 +124,42 @@ export class App {
         'A modern personal portfolio built in Angular to present my skills, projects, and developer profile in a clean and professional way.',
       tech: ['Angular', 'SCSS', 'TypeScript'],
       accent: 'PR',
-      link: this.githubUrl,
+      primaryLink: 'https://alija-portofolio.vercel.app/',
+      primaryLabel: 'Live',
+      secondaryLink: this.githubUrl,
+      secondaryLabel: 'GitHub',
     },
     {
       title: 'MeniSpot',
       description:
-        'A digital menu platform for restaurants, cafes, and bars with QR access, theme customization, menu management, and a central admin workflow.',
+        'A live digital menu platform for restaurants, cafes, and bars with QR access, theme customization, menu management, and a central admin workflow already used by real clients.',
       tech: ['Angular', '.NET 10', 'PostgreSQL', 'Tailwind'],
       accent: 'MS',
-      link: 'https://github.com/AlijaHodzic/MeniSpot',
+      primaryLink: 'https://menispot.com/',
+      primaryLabel: 'Live',
+      secondaryLink: 'https://github.com/AlijaHodzic/MeniSpot',
+      secondaryLabel: 'GitHub',
     },
   ];
 
   readonly experiences: ExperienceItem[] = [
     {
-      period: 'Now',
-      title: 'Junior Full-Stack Developer',
+      period: 'Nov 2025 - Apr 2026',
+      title: 'Full-Stack Development Intern at HAA',
       description:
-        'Focused on building practical web applications with Angular, .NET, C#, TypeScript, and SQLite while improving every project step by step.',
+        'Worked across Angular frontend, C#/.NET backend, MySQL, REST APIs, xUnit testing, and deployments with Render and Vercel in a real engineering workflow.',
     },
     {
-      period: 'Current goal',
-      title: 'Internship or Junior Opportunity',
+      period: 'Current focus',
+      title: 'Junior Full-Stack Developer',
       description:
-        'Actively shaping a portfolio that shows real coding ability, problem solving, and readiness to join a team as a junior developer or intern.',
+        'Building practical full-stack projects with Angular and .NET while improving code quality, UI implementation, API integration, and problem solving.',
     },
     {
       period: 'Next step',
-      title: 'Real Project Expansion',
+      title: 'Junior Role Growth',
       description:
-        'Next updates will add my full experience, resume, stronger project case studies, and more polished details across the site.',
+        'Looking for opportunities where I can contribute to real products, keep learning from experienced engineers, and grow into a stronger full-stack developer.',
     },
   ];
 

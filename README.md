@@ -65,6 +65,6 @@ npm run build
 
 ## Contact
 
-- Email: [alija.hexor@gmail.com](mailto:alija.hexor@gmail.com)
+- Email: [alija.hodzicdev@gmail.com](mailto:alija.hodzicdev@gmail.com)
 - GitHub: [github.com/AlijaHodzic](https://github.com/AlijaHodzic)
 - LinkedIn: [linkedin.com/in/alijahodzic](https://www.linkedin.com/in/alijahodzic/)
