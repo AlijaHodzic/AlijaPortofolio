@@ -115,7 +115,7 @@ export class App {
         'A freelance marketplace concept focused on connecting clients and freelancers through a modern full-stack workflow.',
       tech: ['Angular', '.NET', 'C#', 'SQLite'],
       accent: 'FH',
-      primaryLink: 'https://freelance-hub-eight.vercel.app/',
+      primaryLink: 'https://freelancer-marketplace-livid.vercel.app/',
       primaryLabel: 'Live',
       secondaryLink: 'https://github.com/AlijaHodzic',
       secondaryLabel: 'GitHub',
